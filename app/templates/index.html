@@ -1,13 +1,30 @@
 {% extends 'base.html' %}
-{% block content %}
+
 <h2>News Sources</h2>
-<ul>
-    {% for source in sources %}
-        {% for sources in source %}
+{%block content %}
+    <!-- Popular movie section -->
+    <h3> All Sources</h3>
+    <p>
+      {% for status_sources in status %}
+      {{status_sources.name}}
+      <ul>
+        <li>{{status_sources.description}}</li>
+        <li>{{status_sources.url}}</li>
+      </ul>
+      {% endfor %}
+    </p>
+  {% endblock %}
+
+
+
+
+
+
+
+    <!-- {% for source in sources %}
         <li>{{source.sources[0].name}} </li>
         {{source.sources[0].description}}
-        <a href="{{source.sources[0].url}}">See news articles</a>
-        {%endfor %}
+        <a href="{{source.sources[0].url}}">See news articles</a>   
     {% endfor %}
 </ul>
 <ul>
@@ -19,4 +36,4 @@
         {% endfor %}
     </ul>
    
-{% endblock %}
+-->

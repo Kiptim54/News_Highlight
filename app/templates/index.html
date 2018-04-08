@@ -3,10 +3,13 @@
 {% block content %}
 <h2>News Sources</h2>
 {% for source in sources %}
-<div class="sources">
-        <h4> {{source.name}}</h4>
-        <p>{{source.description}}</p>
-        <button><a href="{{source.url}}">See articles</a></button>
+
+<div class="card">
+        <h5 class="card-header">{{source.name}}</h5>
+        <div class="card-body">
+        <p class="card-text">{{source.description}}</p>
+        <a href="{{source.url}}" class="btn btn-primary">See articles</a>
+</div>
 </div>
     
 

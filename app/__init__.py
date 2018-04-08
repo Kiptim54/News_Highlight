@@ -12,4 +12,6 @@ app.config.from_pyfile('config.py')
 
 # setting up configuration
 bootstrap = Bootstrap(app)
+
+
 from app import views

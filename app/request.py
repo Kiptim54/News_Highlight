@@ -22,25 +22,31 @@ def get_sources(source):
         get_sources_data  = url.read()
         get_source_dict = json.loads(get_sources_data)
 
-        source_results = None
-        if get_source_dict['sources']:
-            source_results_list = get_source_dict['sources']
-            source_results = process_results(source_results_list)
+        source_list=list(get_source_dict)
+    return source_list
+        
 
-    return get_source_dict
- 
-def process_results(source_list):
-    '''
-    Function  that processes the movie result and transform them to a list of Objects
-    '''
+#         source_results = None
+#         if get_source_dict['sources']:
+#             source_results_list = get_source_dict['sources']
+#             source_results = process_results(source_results_list)
+#     print(source_results)
+#     return source_results
     
-    source_results = []
-    for source_item in source_list:
-        name = source_item.get('name')
-        description = source_item.get('description')
-        url = source_item.get('url')
+#     print(source_results_list)
+ 
+# def process_results(source_list):
+#     '''
+#     Function  that processes the movie result and transform them to a list of Objects
+#     '''
+    
+#     source_results = []
+#     for source_item in source_list:
+#         name = source_item.get('name')
+#         description = source_item.get('description')
+#         url = source_item.get('url')
 
-    return source_results
+#     return source_results
     
 
 

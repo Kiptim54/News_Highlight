@@ -1,11 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Setting up page</h1>
-<ul>
-    {% for source in sources %}
-    <li>{{sources}}</li>
-    {% endfor %}
-    
-</ul>
+<h2>News Sources</h2>
+{% for source in sources %}
+    {{sources.sources[0].description}}
 
+{% endfor %}   
 {% endblock %}

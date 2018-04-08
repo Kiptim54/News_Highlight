@@ -2,7 +2,13 @@
 {% block content %}
 <h2>News Sources</h2>
 {% for source in sources %}
+<div class="sources">
+        <h4> {{source.name}}</h4>
+        <p>{{source.description}}</p>
+        <button><a href="{{source.url}}">See articles</a></button>
+</div>
     
+
 {% endfor %}
 {% endblock %}
     

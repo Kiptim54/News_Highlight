@@ -1,9 +1,11 @@
-from app import app
-from .request import get_sources
+from flask import render_template,request,redirect,url_for
+from . import main
+from ..request import get_sources, get_articles
 from flask import render_template
 
 
-@app.route('/')
+
+@main.route('/')
 def index():
     '''
     function returns the index page

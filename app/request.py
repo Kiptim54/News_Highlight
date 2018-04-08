@@ -22,8 +22,10 @@ def get_sources(source):
         get_sources_data  = url.read()
         get_source_dict = json.loads(get_sources_data)
 
-        source_list=list(get_source_dict)
+        source_list=[get_source_dict]
+        print(source_list)
     return source_list
+   
         
 
 #         source_results = None

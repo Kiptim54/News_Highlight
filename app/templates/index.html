@@ -1,8 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>News Sources</h2>
-{% for source in sources %}
-    {{sources.sources[0].description}}
-
-{% endfor %}   
+<ul>
+    {% for source in sources %}
+        {% for sources in source %}
+        <li>{{source.sources[0].name}} </li>
+        {{source.sources[0].description}}
+        <a href="{{source.sources[0].url}}">See news articles</a>
+        {%endfor %}
+    {% endfor %}
+</ul>
+<ul>
+        {% for source in sources %}
+            <li>{{source.sources[1].name}} </li>
+            {{source.sources[1].description}}
+            <a href="{{source.sources[1].url}}">See news articles</a>
+        
+        {% endfor %}
+    </ul>
+   
 {% endblock %}

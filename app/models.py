@@ -13,10 +13,11 @@ class Newsarticle:
     Newsarticles class that define article objects
     '''
 
-    def __init__(self, id, title, author, description, url, publishedAt):
+    def __init__(self, id, title, author, description, urlToImage, url, publishedAt):
         self.id = id
         self.title = title
         self.author = author
         self.description = description
+        self.urlToImage = urlToImage
         self.url = url
         self.publishedAt=publishedAt

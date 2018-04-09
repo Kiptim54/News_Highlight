@@ -93,11 +93,12 @@ def process_result(articles_list):
             title =article_item.get('title')
             author =article_item.get('author')
             description =article_item.get('description')
+            urlToImage =article_item.get('urlToImage')
             url =article_item.get('url')
             publishedAt = article_item.get('publishedAt')
 
             if url:
-                art_object = Newsarticle(id, title, author, description, url, publishedAt)
+                art_object = Newsarticle(id, title, author, description, urlToImage, url, publishedAt)
                 article_object.append(art_object)
 
         print(article_object)

@@ -13,38 +13,17 @@ def configure_request(app):
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
     articles_url=app.config['GET_NEWS_BASE_URL']
-    print(articles_url)
-    print(base_url)
+    # print(articles_url)
+    # print(base_url)
 
-def get_articles(id):
-    '''
-    Function responds with articles for user
-    '''
-    get_article_url=articles_url.format("bbc", api_key)
-    print("hello")
-    print(get_article_url)
-    
-
-    with urllib.request.urlopen(get_article_url) as url:
-        article_json=url.read()
-        article_dict = json.loads(article_json)
-
-        article_object= None
-
-        if article_dict['articles']:
-            article_list=article_dict['articles']
-            article_object=process_results(article_list)
-        
-        print(article_object)
-        return article_object
 
 def get_sources(source):
     '''
     Function gets json response
     '''
     get_source_url = base_url.format("sources",api_key)
-    print(get_source_url)
-    print("hello")
+    # print(get_source_url)
+    # print("hello")
     
 
     with urllib.request.urlopen(get_source_url) as url:
@@ -77,6 +56,26 @@ def process_results(source_list):
             source_results.append(source_object)
     
     return source_results
+def get_articles(id):
+    '''
+    Function responds with articles for user
+    '''
+    get_article_url=articles_url.format(id, api_key)
+    print(get_article_url)
+    
+    with urllib.request.urlopen(get_article_url) as url:
+        article_json=url.read()
+        article_dict = json.loads(article_json)
+
+        article_object= None
+
+        if article_dict['articles']:
+            article_list=article_dict['articles']
+            article_object=process_results(article_list)
+        
+        print(article_object)
+        return article_object
+        
 
 
 

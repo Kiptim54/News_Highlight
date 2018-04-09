@@ -1,5 +1,3 @@
-
-
 # KIPTIM |  NewsHighlight Application
 
 ## This is web application created at Moringa school coding bootcamp by Brenda Kiptim.

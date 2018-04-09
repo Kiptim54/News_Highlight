@@ -57,11 +57,12 @@ def process_results(source_list):
             source_results.append(source_object)
     
     return source_results
+
 def get_articles(id):
     '''
     Function responds with articles for user
     '''
-    get_article_url=base_url.format('everything', api_key) + '&sources=' + id
+    get_article_url=articles_url.format(id, api_key) 
     #https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
     print(get_article_url)
     
@@ -73,16 +74,13 @@ def get_articles(id):
 
         if article_dict['articles']:
             article_list=article_dict['articles']
-            article_object=process_results(article_list)
+            article_object=process_result(article_list)
         
-        
+        print(article_object)
         return article_object
-        
 
 
-
-        
-    def process_results(articles_list):
+def process_result(articles_list):
         '''
         Function  that processes the movie result and transform them to a list of Objects
         '''
@@ -104,6 +102,12 @@ def get_articles(id):
 
         print(article_object)
         return article_object
+        
+
+
+
+        
+    
 
 
         

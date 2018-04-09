@@ -17,10 +17,11 @@ def index():
     
     return render_template('index.html', title=title, sources=news_source)
 
-@main.route('/articles/<int:id>')
-def articles():
+@main.route('/articles/<id>')
+def articles(id):
     '''
     '''
     articles_get=get_articles(id)
+    title= "Articles"
 
-    return render_template('articles.html', articles=articles_get)
+    return render_template('articles.html', title=title , articles=articles_get)

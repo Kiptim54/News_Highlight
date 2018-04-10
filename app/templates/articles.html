@@ -1,19 +1,40 @@
 {% extends 'base.html' %}
 {% block content %}
 {% for article in articles %}
-<h5>{{article.title}}</h5>
-<em></em>
-{{article.author}}
+<div class="col-md-6">
+    <div class="well">
+    <div class="card text-center">
+        <img class="img-responsive" src="{{article.urlToImage}}" alt="Card image cap">
+      <div class="card" style="width: 60rem;">
+          <div class="card-body text-center">
+          <strong><h4 class="card-title">{{article.title}}</h4></strong>
+          <p class="card-text">{{article.description}}</p>
+          <a href="" class="btn btn-primary">Read articles</a>
+          <p class="card-text"><small class="text-muted">{{article.publishedAt}}</small></p>
+        </div>
+      </div>
+      </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
 
+  <!-- <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{article.urlToImage}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{article.title}}</h5>
+        <p class="card-text"><em>>{{article.description}}</em></p>
+        <p class="card-text"><small class="text-muted">{{article.publishedAt}}</small></p>
+        <a href="#" class="btn btn-primary">Visit site</a>
+      </div>
+    </div> -->
+<!-- 
 <div class="card mb-3">
     <img class="card-img-top" src="{{article.urlToImage}}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{article.title}}</h5>
       <p class="card-text">{{article.description}}</p>
-      <p class="card-text"><small class="text-muted">{{article.publishedAt}}</small></p>
+      
     </div>
-  </div>
+  </div> -->
 
-
-{% endfor %}
-{% endblock %}
